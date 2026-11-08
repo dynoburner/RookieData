@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNASTY DATA JOURNAL // 199X RETRO EDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Retro Scanlines Overlay -->
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <!-- Header Banner -->
+        <header class="retro-header">
+            <div class="marquee-container">
+                <p class="marquee">*** WELCOME TO THE DYNASTY DATA JOURNAL v9.42 *** ROOKIE PROJECTIONS & SCORING MATRICES ONLINE *** SYSTEM STATUS: OPTIMAL ***</p>
+            </div>
+            <div class="header-main">
+                <h1 class="glitch-title">DYNASTY // <span>DATA JOURNAL</span></h1>
+                <p class="subtitle">[ SCORES • ROOKIE COMPARISONS • YR 1-3 PPG PROJECTIONS ]</p>
+            </div>
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="bigboard">2025/2026 Big Board</button>
+                <button class="tab-btn" data-tab="rankings">WR / RB Rankings</button>
+                <button class="tab-btn" data-tab="projections">Yr 1-3 PPG Projections</button>
+                <button class="tab-btn" data-tab="matrix">Matrix & Comps</button>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="retro-panel">
+            <!-- Controls / Filter Bar -->
+            <div class="control-bar">
+                <div class="search-box">
+                    <label for="searchInput">SEARCH PLAYER:</label>
+                    <input type="text" id="searchInput" placeholder="e.g. Ashton Jeanty, Jordyn Tyson...">
+                </div>
+                <div class="filter-group">
+                    <label for="posFilter">POSITION:</label>
+                    <select id="posFilter">
+                        <option value="ALL">ALL POSITIONS</option>
+                        <option value="QB">QB</option>
+                        <option value="RB">RB</option>
+                        <option value="WR">WR</option>
+                        <option value="TE">TE</option>
+                    </select>
+                </div>
+                <div class="status-indicator">
+                    <span class="blink-dot"></span> LIVE DATA FEED
+                </div>
+            </div>
+
+            <!-- Data Table Container -->
+            <div class="table-container">
+                <table id="dynastyTable">
+                    <thead>
+                        <tr id="tableHeaders">
+                            <!-- Populated via JS -->
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Retro Footer Stats / Legend -->
+            <div class="retro-footer-stats">
+                <div class="stat-box">
+                    <span class="stat-label">TOTAL PROSPECTS:</span>
+                    <span class="stat-value" id="statTotal">--</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">AVG YR 3 PPG:</span>
+                    <span class="stat-value" id="statPpg">--</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">TOP TIER GRADE:</span>
+                    <span class="stat-value">Elite SZN</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 199X-2026 DYNASTY DATA JOURNAL. ALL RIGHTS RESERVED. POWERED BY RETROJS & EXCEL SYNC.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

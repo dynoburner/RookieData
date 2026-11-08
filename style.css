@@ -1,0 +1,294 @@
+/* 80s / 90s Pastel Vaporwave & Retro Terminal Theme */
+:root {
+    --bg-color: #1a1528;
+    --panel-bg: #221b36;
+    --border-color: #d1bce3;
+    --text-main: #f3e9ff;
+    --text-muted: #bda6d8;
+    --accent-pink: #ffb7c5;
+    --accent-mint: #baffc9;
+    --accent-yellow: #ffffba;
+    --accent-blue: #bae1ff;
+    --accent-lavender: #e8c5ff;
+    --header-gradient: linear-gradient(135deg, #3a2559 0%, #221b36 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', monospace;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* CRT Scanlines Effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Retro Header */
+.retro-header {
+    background: var(--panel-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 6px 6px 0px rgba(209, 188, 227, 0.3);
+    margin-bottom: 25px;
+    padding: 15px;
+}
+
+.marquee-container {
+    background: #110d1c;
+    border: 1px dashed var(--accent-pink);
+    color: var(--accent-pink);
+    padding: 5px;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 12px;
+}
+
+.marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.header-main {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.glitch-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    color: var(--accent-yellow);
+    text-shadow: 3px 3px var(--accent-pink);
+    margin-bottom: 5px;
+}
+
+.glitch-title span {
+    color: var(--accent-mint);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: #2d2347;
+    color: var(--text-main);
+    border: 2px solid var(--border-color);
+    padding: 8px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: var(--accent-lavender);
+    color: #1a1528;
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: var(--accent-pink);
+    color: #1a1528;
+    border-color: var(--accent-yellow);
+    font-weight: bold;
+    box-shadow: 2px 2px 0px var(--accent-yellow);
+}
+
+/* Retro Panel */
+.retro-panel {
+    background: var(--panel-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 6px 6px 0px rgba(209, 188, 227, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Control Bar */
+.control-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #151122;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.search-box, .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.search-box input, .filter-group select {
+    background: #221b36;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    padding: 5px 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+}
+
+.search-box input:focus, .filter-group select:focus {
+    outline: none;
+    border-color: var(--accent-mint);
+}
+
+.status-indicator {
+    font-size: 0.9rem;
+    color: var(--accent-mint);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blink-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-mint);
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+/* Data Table Styling with Conditional Pastels */
+.table-container {
+    max-height: 550px;
+    overflow-y: auto;
+    border: 2px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background: #31264f;
+    color: var(--accent-yellow);
+    padding: 12px 10px;
+    border-bottom: 3px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #31264f;
+    border-right: 1px solid #31264f;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+tr:hover {
+    background-color: rgba(232, 197, 255, 0.08);
+}
+
+/* Conditional Formatting Pastel Highlights */
+.cell-elite {
+    background-color: rgba(186, 255, 201, 0.2);
+    color: var(--accent-mint);
+    font-weight: bold;
+}
+
+.cell-mid {
+    background-color: rgba(255, 255, 186, 0.15);
+    color: var(--accent-yellow);
+}
+
+.cell-low {
+    background-color: rgba(255, 183, 197, 0.15);
+    color: var(--accent-pink);
+}
+
+/* Retro Footer Stats */
+.retro-footer-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    background: #151122;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-family: 'VT323', monospace;
+    color: var(--accent-mint);
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
